@@ -1,4 +1,5 @@
 import mysql.connector
+# from logger_config import logger
 
 class DBConnection:
     def __init__(self):
@@ -52,7 +53,7 @@ class DBConnection:
                 location VARCHAR(50),
                 difficuly INT,
                 importance INT,
-                status VARCHAR(50) DEFAULT "NEW",
+                status VARCHAR(50) ENUM ("NEW", "ASSIGNED", "IN_PROGRESS", "COMPLETED", "FAILD", "CANCELETED") DEFAULT "NEW",
                 risk_level VARCHAR(50),
                 assigned_agent_id INT NULL
                  
